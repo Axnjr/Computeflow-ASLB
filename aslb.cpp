@@ -1,32 +1,26 @@
-//#include "rapidjson/document.h"
-#include "httplib.h"
+#include "headers/httplib.h"
 #include "crow.h"
+#include "headers/load_balancer.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
-using namespace httplib;
+//using namespace httplib;
 
 int main() {
-    crow::SimpleApp Server;
+	crow::SimpleApp Server;
+	static int REQUEST_COUNT = 0;
 
-   /* CROW_CATCHALL_ROUTE(Server)([](const crow::request& req, crow::response& res, std::string path) {
-        std::string host = req.get_header_value("Host");
-        std::string subdomain = host.substr(0, host.find('.'));
+   CROW_CATCHALL_ROUTE(Server)([](const crow::request& req, crow::response& res) {
+		cout << "RAW URL:" << req.raw_url << endl;
+		cout << "REMOTE IP ADDRESS:" << req.remote_ip_address << endl;
+		cout << "URL PARAMS:" << req.url_params << endl;
+		string ip = get_server_ip(REQUEST_COUNT);
+		res.write(ip);
+		res.end();
+   });
 
-        cout << "HOST:" << host << endl;
-        cout << "SUB DOMAIN:" << subdomain << endl;
-        cout << "BODY:" << req.body << endl;
-
-        cout << "PATH:" << endl;
-        for (auto i : path) {
-            cout << i << endl;
-        }
-
-        res.write("WRITTING A RESPONSE TO `write` method !");
-        res.end();
-        });*/
-
-    Server.loglevel(crow::LogLevel::Info);
-    Server.port(3000).multithreaded().run_async();
-    return 0;
+	Server.loglevel(crow::LogLevel::Info);
+	Server.port(3000).multithreaded().run();
+	return 0;
 }
