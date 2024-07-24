@@ -133,8 +133,9 @@
     <None Include="aslb_config.json" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="headers\fetch_response.h" />
     <ClInclude Include="headers\load_balancer.h" />
-    <ClInclude Include="headers\utils.h" />
+    <ClInclude Include="headers\load_config.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
