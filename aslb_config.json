@@ -1,8 +1,16 @@
 {
   "totalInstances": 5,
+  "port": 5000,
   "instanceMetaData": {
 
   },
+  "ipPoolDev": [
+    "axn.vercel.app",
+    "www.chatgpt.com",
+    "www.google.com",
+    "www.github.com",
+    "www.youtube.com"
+  ],
   "ipPool": [
     "123.43.2.3",
     "3.45.2.1",
