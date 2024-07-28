@@ -23,13 +23,16 @@
     <None Include="aslb_config.json" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\load_balancer.h">
+    <ClInclude Include="headers\ip_cache.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\load_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\fetch_response.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\get_tcp_response.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

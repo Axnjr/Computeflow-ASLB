@@ -134,7 +134,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\fetch_response.h" />
-    <ClInclude Include="headers\load_balancer.h" />
+    <ClInclude Include="headers\get_tcp_response.h" />
+    <ClInclude Include="headers\ip_cache.h" />
     <ClInclude Include="headers\load_config.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
