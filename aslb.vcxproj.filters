@@ -18,21 +18,31 @@
     <ClCompile Include="aslb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dependencies\easywsclient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="aslb_config.json" />
+    <None Include="test_client.mjs" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\ip_cache.h">
+    <ClInclude Include="ip_cache.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\load_config.h">
+    <ClInclude Include="load_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\fetch_response.h">
+    <ClInclude Include="fetch_response.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\get_tcp_response.h">
+    <ClInclude Include="utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\httplib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\easywsclient.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

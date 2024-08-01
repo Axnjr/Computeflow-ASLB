@@ -128,15 +128,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="aslb.cpp" />
+    <ClCompile Include="dependencies\easywsclient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="aslb_config.json" />
+    <None Include="test_client.mjs" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\fetch_response.h" />
-    <ClInclude Include="headers\get_tcp_response.h" />
-    <ClInclude Include="headers\ip_cache.h" />
-    <ClInclude Include="headers\load_config.h" />
+    <ClInclude Include="dependencies\easywsclient.hpp" />
+    <ClInclude Include="fetch_response.h" />
+    <ClInclude Include="dependencies\httplib.h" />
+    <ClInclude Include="ip_cache.h" />
+    <ClInclude Include="load_config.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
