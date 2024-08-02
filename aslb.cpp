@@ -4,16 +4,11 @@
 #include "load_config.h"
 #include "fetch_response.h"
 #include "utils.h"
-
-#include "dependencies/easywsclient.hpp"
-#ifdef _WIN32
-#pragma comment( lib, "ws2_32" )
-#include <WinSock2.h>
-#endif
+#include <iostream>
+#include "crow.h"
 
 using namespace std;
 using namespace httplib;
-using easywsclient::WebSocket;
 
 ip_cache cache;
 
@@ -45,29 +40,7 @@ static void handle_message(const std::string& message) {
 }
 
 static void fetch_vm_info(string ip) {
-	std::unique_ptr<WebSocket> ws(WebSocket::from_url("ws://localhost:3000/"));
-	//assert(ws);
 
-	if (!ws) {
-		cout << endl << "Could not connect with VM: " << ip << endl;
-		// handle connection error / vm might be down
-		return;
-	}
-
-	cout << "TRYING !!" << endl;
-
-	//#ifdef DEV_MODE
-		ws->send("JOIN");
-		cout << "JOIN SIGNAL SENT" << endl;
-	//#endif // DEV_MODE
-		//ws->send("PING ASLB");
-
-	while (ws->getReadyState() != WebSocket::CLOSED) {
-		ws->poll();
-		ws->dispatch([](const std::string& message) {
-			printf(">>> %s\n", message.c_str());
-		});
-	}
 }
 
 int main(void) {
@@ -75,6 +48,26 @@ int main(void) {
 	initialize_static_memory_from_config(PORT, IP_POOL);
 
 	Server svr;
+	crow::SimpleApp WS;
+
+	mutex mtx;
+	unordered_set<crow::websocket::connection*> WS_USERS;
+
+	CROW_WEBSOCKET_ROUTE(WS, "/ws")
+		.onopen([&](crow::websocket::connection& conn) {
+			CROW_LOG_INFO << "new websocket connection from " << conn.get_remote_ip();
+			std::lock_guard<std::mutex> _(mtx);
+			WS_USERS.insert(&conn);
+		})
+		.onclose([&](crow::websocket::connection& conn, const std::string& reason, uint16_t) {
+			CROW_LOG_INFO << "websocket connection closed: " << reason;
+			std::lock_guard<std::mutex> _(mtx);
+			WS_USERS.erase(&conn);
+		})
+		.onmessage([&](crow::websocket::connection& /*conn*/, const std::string& data, bool is_binary) {
+			CROW_LOG_INFO << "RECIVED MESSAGE: " << data;
+		});
+	
 	svr.set_logger([](const Request& req, const Response& res) { cout << log(req, res); });
 
 	svr.Get(".*", [](const Request& req, Response& res) {
@@ -86,21 +79,9 @@ int main(void) {
 		res.headers = op->headers;
 	});
 
-	thread([]() {
-		cout << endl << "WEBSOCKET THREAD STARTED !" << endl;
-		cout << endl << "Thread Id:" << this_thread::get_id() << endl;
-		while (true) {
-			cout << "IN THE LOOP" << endl;
-
-			if (WS_REQUEST_COUNT >= IP_POOL.size()) {
-				WS_REQUEST_COUNT = 0;
-			}
-
-			fetch_vm_info(IP_POOL[WS_REQUEST_COUNT]);
-
-			this_thread::sleep_for(0.3s);
-			WS_REQUEST_COUNT++;
-		}
+	thread([&]() {
+		cout << endl << "WEBSOCKET THREAD / SERVER STARTED ON PORT: [5000] | ThreadId: " << this_thread::get_id() << endl;
+		WS.port(5000).run();
 	}).detach();
 
 	cout << "SERVER STARTED ON PORT: [4000]" << endl;
@@ -108,3 +89,16 @@ int main(void) {
 
 	return 0;
 }
+
+//while (true) {
+//	cout << "IN THE LOOP" << endl;
+//
+//	if (WS_REQUEST_COUNT >= IP_POOL.size()) {
+//		WS_REQUEST_COUNT = 0;
+//	}
+//
+//	fetch_vm_info(IP_POOL[WS_REQUEST_COUNT]);
+//
+//	this_thread::sleep_for(0.3s);
+//	WS_REQUEST_COUNT++;
+//}
