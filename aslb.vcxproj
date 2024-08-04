@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,18 +130,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="aslb.cpp" />
-    <ClCompile Include="dependencies\easywsclient.cpp" />
+    <ClCompile Include="lb_config_struct.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="aslb_config.json" />
-    <None Include="test_client.mjs" />
+    <None Include="test_client.js" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dependencies\easywsclient.hpp" />
     <ClInclude Include="fetch_response.h" />
     <ClInclude Include="dependencies\httplib.h" />
     <ClInclude Include="ip_cache.h" />
     <ClInclude Include="load_config.h" />
+    <ClInclude Include="scaling.h" />
+    <ClInclude Include="lb_config_struct.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
