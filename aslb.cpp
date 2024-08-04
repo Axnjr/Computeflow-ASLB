@@ -4,101 +4,189 @@
 #include "load_config.h"
 #include "fetch_response.h"
 #include "utils.h"
+#include "rapidjson/document.h"
+#include "lb_config_struct.h"
+#include "scaling.h"
 #include <iostream>
-#include "crow.h"
 
 using namespace std;
 using namespace httplib;
 
+struct CLIENT_USAGE_DATA {
+	string ip;
+
+	//int ipPoolIndex = -1;
+	int cpus;
+
+	float freeMemoryInMB;
+	float systemUptime;
+	float totalMemory;
+	float cpuUsage;
+	float memUsage;
+
+	chrono::time_point<chrono::steady_clock> lastUpdated;
+};
+
 ip_cache cache;
 
-int ip_cache::cap = 0;
+stringstream LB_LOGS; // HERE
+
+int ip_cache::cap = 100;
 list<string> ip_cache::lru;
 unordered_map<string, pair<list<string>::iterator, int>> ip_cache::lru_map;
+unordered_map<string, CLIENT_USAGE_DATA> client_usage_map;
 
 static int HTTP_REQUEST_COUNT = 0;
-static int WS_REQUEST_COUNT = 0;
-static int PORT;
-static vector<string> IP_POOL;
 
-// Sticky Session to be implmented
 static string map_clientIp_to_serverIp(string ip) {
 	int r = cache.find_ip(ip, HTTP_REQUEST_COUNT);
 	if (r != -1) {
-		return IP_POOL[r];
+		return LB_CONFIG::IP_POOL[r];
 	}
-	else if (HTTP_REQUEST_COUNT >= IP_POOL.size()) {
+	else if (HTTP_REQUEST_COUNT >= LB_CONFIG::IP_POOL.size()) {
 		HTTP_REQUEST_COUNT = 0;
 		cout << "REQUEST COUNT RESET !!" << endl;
 	}
 	cout << "REQUEST COUNT: " << HTTP_REQUEST_COUNT << endl;
-	return IP_POOL[HTTP_REQUEST_COUNT++];
+	return LB_CONFIG::IP_POOL[HTTP_REQUEST_COUNT++];
 }
 
-static void handle_message(const std::string& message) {
-	printf(">>> %s\n", message.c_str());
+static void request_handler(const Request& req, Response& res) {
+	string ip = map_clientIp_to_serverIp(req.remote_addr);
+	auto op = fetch_response_from_ip("", req.path, LB_CONFIG::PORT);
+	res.body = op->body;
+	res.status = op->status;
+	res.headers = op->headers;
 }
 
-static void fetch_vm_info(string ip) {
+static void analyze_vm_state(CLIENT_USAGE_DATA usage_data) {
+	if(
+		(
+			usage_data.cpuUsage > LB_CONFIG::max_cpu_usage
+								||													// OR
+			usage_data.memUsage > LB_CONFIG::max_mem_usage
+		)
+						&&
+		LB_CONFIG::vmCount < LB_CONFIG::maxVms
+	)
+	{
+		// scale vm up ..
+		thread(scale_up).detach();
+		return;
+	}
 
+	if(
+		(
+			usage_data.cpuUsage < LB_CONFIG::min_cpu_usage
+								||													// OR
+			usage_data.memUsage < LB_CONFIG::min_mem_usage
+		)
+						&&
+		LB_CONFIG::vmCount > LB_CONFIG::minVms
+	)
+	{
+		// scale vm down ..
+		thread(scale_down, usage_data.ip).detach();
+	}
+	return;
 }
 
 int main(void) {
 
-	initialize_static_memory_from_config(PORT, IP_POOL);
+	initialize_static_memory_from_config();
 
 	Server svr;
-	crow::SimpleApp WS;
+	Document JsonMessage;
 
-	mutex mtx;
-	unordered_set<crow::websocket::connection*> WS_USERS;
-
-	CROW_WEBSOCKET_ROUTE(WS, "/ws")
-		.onopen([&](crow::websocket::connection& conn) {
-			CROW_LOG_INFO << "new websocket connection from " << conn.get_remote_ip();
-			std::lock_guard<std::mutex> _(mtx);
-			WS_USERS.insert(&conn);
-		})
-		.onclose([&](crow::websocket::connection& conn, const std::string& reason, uint16_t) {
-			CROW_LOG_INFO << "websocket connection closed: " << reason;
-			std::lock_guard<std::mutex> _(mtx);
-			WS_USERS.erase(&conn);
-		})
-		.onmessage([&](crow::websocket::connection& /*conn*/, const std::string& data, bool is_binary) {
-			CROW_LOG_INFO << "RECIVED MESSAGE: " << data;
-		});
-	
-	svr.set_logger([](const Request& req, const Response& res) { cout << log(req, res); });
-
-	svr.Get(".*", [](const Request& req, Response& res) {
-		//cout << endl << "CLIENT-IP: " << req.remote_addr << endl;
-		string ip = map_clientIp_to_serverIp(req.remote_addr);
-		auto op = fetch_response_from_ip("", req.path, PORT);
-		res.body = op->body;
-		res.status = op->status;
-		res.headers = op->headers;
+	svr.set_logger([](const Request& req, const Response& res) { 
+		cout << log(req, res); 
 	});
 
-	thread([&]() {
-		cout << endl << "WEBSOCKET THREAD / SERVER STARTED ON PORT: [5000] | ThreadId: " << this_thread::get_id() << endl;
-		WS.port(5000).run();
-	}).detach();
+	svr.Post(".*", [&](const Request& req, Response& res)
+		{
+
+			if (req.path == "/ping")
+			{
+				cout << endl << "------ BODY ------" << endl << req.body << endl << "------ BODY ------" << endl;
+
+				JsonMessage.Parse(req.body.c_str());
+
+				if (JsonMessage.HasParseError())
+				{
+					cerr << "Error parsing `aslb_config.json`: " << JsonMessage.GetParseError() << endl;
+				}
+
+				auto client_usage_map_it = client_usage_map.find(req.remote_addr);
+
+				if (client_usage_map_it == client_usage_map.end())
+				{
+					CLIENT_USAGE_DATA cud;
+
+					cud.cpus = JsonMessage["cpus"].GetInt();
+					cud.cpuUsage = JsonMessage["cpuUsage"].GetFloat();
+					cud.memUsage = JsonMessage["memoryUsage"].GetFloat();
+					cud.systemUptime = JsonMessage["systemUptime"].GetFloat();
+					cud.freeMemoryInMB = JsonMessage["freeMemoryInMB"].GetFloat();
+					cud.totalMemory = JsonMessage["totalMemory"].GetFloat();
+					cud.ip = req.remote_addr;
+					cud.lastUpdated = chrono::steady_clock::now();
+					//cud.ipPoolIndex = find(IP_POOL.begin(), IP_POOL.end(), req.remote_addr);
+
+					client_usage_map.emplace(req.remote_addr, cud);
+
+					analyze_vm_state(cud);
+				}
+
+				else
+				{
+					auto& temp = *client_usage_map_it;
+
+					temp.second.cpuUsage = JsonMessage["cpuUsage"].GetFloat();
+					temp.second.memUsage = JsonMessage["memoryUsage"].GetFloat();
+					temp.second.systemUptime = JsonMessage["systemUptime"].GetFloat();
+					temp.second.freeMemoryInMB = JsonMessage["freeMemoryInMB"].GetFloat();
+					temp.second.totalMemory = JsonMessage["totalMemory"].GetFloat();
+					temp.second.lastUpdated = chrono::steady_clock::now();
+
+					analyze_vm_state(temp.second);
+				}
+				res.status = 200;
+			}
+			else if (req.path == "/ping_error") {
+				cout << endl << "------ BODY ------" << endl << req.body << endl << "------ BODY ------" << endl;
+			}
+			else {
+				request_handler(req, res);
+			}
+		});
+
+	svr.Get(".*", [](const Request& req, Response& res) {
+		cout << endl << "CLIENT-IP: " << req.path << endl;
+		if (req.path == "/status/status") {
+			res.set_content(getLBConfigAsJson(), "text/json");
+		}
+		else if (req.path == "/logs/logs") {
+			// logs to be implemented
+		}
+		else {
+			request_handler(req, res);
+		}
+	});
+
+	svr.Delete(".*", [](const Request& req, Response& res) {
+		request_handler(req, res);
+	});
+
+	svr.Patch(".*", [](const Request& req, Response& res) {
+		request_handler(req, res);
+	});
+
+	svr.Put(".*", [](const Request& req, Response& res) {
+		request_handler(req, res);
+	});
 
 	cout << "SERVER STARTED ON PORT: [4000]" << endl;
-	svr.listen("localhost", 4000);
+	svr.listen("2401:4900:1c21:2153:8dc4:e44f:9fe8:fea9", 4000);
 
 	return 0;
 }
-
-//while (true) {
-//	cout << "IN THE LOOP" << endl;
-//
-//	if (WS_REQUEST_COUNT >= IP_POOL.size()) {
-//		WS_REQUEST_COUNT = 0;
-//	}
-//
-//	fetch_vm_info(IP_POOL[WS_REQUEST_COUNT]);
-//
-//	this_thread::sleep_for(0.3s);
-//	WS_REQUEST_COUNT++;
-//}
