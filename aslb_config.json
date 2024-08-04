@@ -1,16 +1,4 @@
 {
-  "totalInstances": 5,
-  "port": 5000,
-  "instanceMetaData": {
-
-  },
-  "ipPoolDev": [
-    "axn.vercel.app",
-    "www.chatgpt.com",
-    "www.google.com",
-    "www.github.com",
-    "www.youtube.com"
-  ],
   "ipPool": [
     "123.43.2.3",
     "3.45.2.1",
@@ -18,7 +6,30 @@
     "45.67.8.2",
     "100.100.2.56"
   ],
+  "ipPoolDev": [
+    "axn.vercel.app",
+    "www.chatgpt.com",
+    "www.google.com",
+    "www.github.com",
+    "www.youtube.com"
+  ],
+  "port": 5000,
   "scalingPolicies": {
-
-  }
+    "idealCPU": 50,
+    "maxCPU": 70,
+    "maxMemory": 70,
+    "minCPU": 2,
+    "minMemory": 2
+  },
+  "vmCount": 5,
+  "type": "advanced",
+  "maxVms": 100,
+  "minVms": 1,
+  "vmMetaData": {
+    "enviromentVariables": "_API_KEY=2W3E4R5T6Y7U8FVGBHN; MODE=DEV",
+    "script": "npm install \n npm run build \n npm start",
+    "vmType": "t2.micro",
+    "name": "Padmnabh"
+  },
+  "amiId": "ami-025fe52e1f2dc5044"
 }
