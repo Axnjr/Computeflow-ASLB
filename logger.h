@@ -1,4 +1,4 @@
-#ifndef ASLB_LOGGER_H
+﻿#ifndef ASLB_LOGGER_H
 #define ASLB_LOGGER_H
 
 #include <iostream>
@@ -40,7 +40,7 @@ namespace logger {
 
 		if (logFile.is_open()) {
 			std::stringstream ss;
-			ss << getCurrentTime() << " - ";
+			ss << "[" << getCurrentTime() << "]" << " ◆ ";
 			(ss << ... << args);  // Fold expression to handle variadic arguments
 			logFile << ss.str() << std::endl;
 			logFile.close();
