@@ -12,10 +12,16 @@
 #include "cpr/cpr.h"
 #include "aws/core/Aws.h"
 #include "aws/ec2/EC2Client.h"
+#include "logger.h"
 
 using namespace std;
+using namespace logger;
 
 bool scale_up() {
+
+	ltf("scaling.h/scale_up");
+
+	cout << "\n Scaling-up fleet in progress ! \n";
 
 	Aws::SDKOptions options;
 	Aws::InitAPI(options);
@@ -35,13 +41,13 @@ bool scale_up() {
 		Aws::EC2::Model::RunInstancesOutcome runOutcome = ec2Client.RunInstances(runRequest);
 		if (!runOutcome.IsSuccess()) {
 
-			std::cerr 
-				<< "Failed to scale VM fleet up based on ami: "
-				<< LB_CONFIG::ami_id
-				<< " Error: "
-				<< runOutcome.GetError().GetMessage()
-				<< std::endl
-			;
+			ltf(
+				"Failed to scale VM fleet up based on ami: ",
+				LB_CONFIG::ami_id,
+				" Error: ",
+				runOutcome.GetError().GetMessage(),
+				"\n"
+			);
 
 			return false;
 		}
@@ -49,13 +55,13 @@ bool scale_up() {
 		const Aws::Vector<Aws::EC2::Model::Instance>& instances = runOutcome.GetResult().GetInstances();
 		if (instances.empty()) {
 
-			cerr 
-				<< "Failed to scale VM fleet up based on ami: "
-				<< LB_CONFIG::ami_id
-				<< " Error: "
-				<< runOutcome.GetError().GetMessage()
-				<< endl
-			;
+			ltf(
+				"Failed to scale VM fleet up based on ami: ",
+				LB_CONFIG::ami_id,
+				" Error: ",
+				runOutcome.GetError().GetMessage(),
+				"\n"
+			);
 
 			return false;
 		}
@@ -73,20 +79,20 @@ bool scale_up() {
 			{
 				new_vm_ip = outcome.GetResult().GetReservations()[0].GetInstances()[0].GetPublicIpAddress();
 
-				std::cout 
-					<< "ATTEMPTING TO FETCH NEW VM IP ADDRESS! ATTEMPT NO: "
-					<< max_attempt_to_fetch_ip
-					<< " Got: "
-					<< new_vm_ip
-					<< std::endl
-				;
+				ltf(
+					"ATTEMPTING TO FETCH NEW VM IP ADDRESS! ATTEMPT NO: ",
+					max_attempt_to_fetch_ip,
+					" Got: ",
+					new_vm_ip,
+					"\n"
+				);
 
 				if (!new_vm_ip.empty()) {
 					return true;
 				}
 			}
 			else {
-				std::cerr << "Failed to describe instance Error: " << outcome.GetError().GetMessage() << std::endl;
+				ltf("Failed to fetch new VM IP address Error: ", outcome.GetError().GetMessage(), "\n");
 			}
 
 			max_attempt_to_fetch_ip++;
@@ -97,7 +103,7 @@ bool scale_up() {
 	}
 	catch (const std::exception& err) 
 	{
-		cout << endl << " ERROR HO GYA !! " << err.what() << endl;
+		ltf(" ERROR IN SCALING-UP FLEET !! ,", err.what(), "\n");
 	}
 
 	Aws::ShutdownAPI(options);
@@ -106,6 +112,9 @@ bool scale_up() {
 
 
 bool scale_down(string ip) {
+
+	cout << "\n Scaling-down fleet in progress \n";
+
 	Aws::SDKOptions options;
 	Aws::InitAPI(options);
 
@@ -124,7 +133,11 @@ bool scale_down(string ip) {
 		auto describeOutcome = ec2Client.DescribeInstances(describe);
 		if (!describeOutcome.IsSuccess()) 
 		{
-			std::cerr << "Failed to describe EC2 instances: " << describeOutcome.GetError().GetMessage() << std::endl;
+			ltf(
+				"Failed to Scale-down fleet, Error Fetching VM id: ",
+				describeOutcome.GetError().GetMessage(),
+				"\n"
+			);
 			Aws::ShutdownAPI(options);
 			return false;
 		}
@@ -135,19 +148,23 @@ bool scale_down(string ip) {
 		auto terminateOutcome = ec2Client.TerminateInstances(terminateVm);
 		if (!terminateOutcome.IsSuccess()) 
 		{
-			std::cerr << "Failed to terminate EC2 instance: " << terminateOutcome.GetError().GetMessage() << std::endl;
+			ltf(
+				"Failed to terminate EC2 instance:",
+				terminateOutcome.GetError().GetMessage(),
+				"\n"
+			);
 			Aws::ShutdownAPI(options);
 			return false;
 		}
 
-		cout << "1 VM REMOED FROM FLEET !!" << endl;
+		ltf("1 VM REMOED FROM FLEET !!");
 
 		Aws::ShutdownAPI(options);
 		return true;
 	}
 	catch (const std::exception& err)
 	{
-		cout << endl << " ERROR IN TERMINATING INSTANCE !! " << err.what() << endl;
+		ltf(" ERROR IN TERMINATING INSTANCE !! ", err.what(), "\n");
 	}
 
 	Aws::ShutdownAPI(options);
