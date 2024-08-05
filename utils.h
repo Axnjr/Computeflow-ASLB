@@ -1,4 +1,5 @@
 #include "dependencies/httplib.h"
+#include "logger.h"
 
 using namespace std;
 using namespace httplib;
@@ -14,14 +15,15 @@ static string stringify_headers(const Headers& headers) {
 }
 
 static string log(const Request& req, const Response& res) {
+
     string s;
     string query;
     char buf[BUFSIZ];
 
-    s += "================================\n";
+    s += "\n =========================================================================================== \n";
 
     snprintf(buf, sizeof(buf), "%s %s %s", req.method.c_str(),
-        req.version.c_str(), req.path.c_str());
+    req.version.c_str(), req.path.c_str());
     s += buf;
 
     for (auto it = req.params.begin(); it != req.params.end(); ++it) {
@@ -31,17 +33,18 @@ static string log(const Request& req, const Response& res) {
             x.second.c_str());
         query += buf;
     }
+
     snprintf(buf, sizeof(buf), "%s\n", query.c_str());
     s += buf;
-
     s += stringify_headers(req.headers);
     //s += dump_multipart_files(req.files); method removed / disabled
 
-    s += "--------------------------------\n";
-
     snprintf(buf, sizeof(buf), "%d\n", res.status);
+
     s += buf;
     s += stringify_headers(res.headers);
+    s += "\n =========================================================================================== \n";
 
+    logger::ltf(s);
     return s;
 }
