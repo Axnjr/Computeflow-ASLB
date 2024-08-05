@@ -141,6 +141,8 @@
     <ClInclude Include="dependencies\httplib.h" />
     <ClInclude Include="ip_cache.h" />
     <ClInclude Include="load_config.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="notifications.h" />
     <ClInclude Include="scaling.h" />
     <ClInclude Include="lb_config_struct.h" />
     <ClInclude Include="utils.h" />

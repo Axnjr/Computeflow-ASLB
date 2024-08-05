@@ -48,5 +48,11 @@
     <ClInclude Include="lb_config_struct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="notifications.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
