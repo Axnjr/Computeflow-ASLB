@@ -7,10 +7,12 @@
 #include "rapidjson/document.h"
 #include "lb_config_struct.h"
 #include "scaling.h"
+#include "logger.h"
 #include <iostream>
 
 using namespace std;
 using namespace httplib;
+using namespace logger;
 
 struct CLIENT_USAGE_DATA {
 
@@ -73,7 +75,7 @@ static void analyze_vm_state(CLIENT_USAGE_DATA usage_data) {
 	)
 	{
 		// scale vm up ..
-		//thread(scale_up).detach();
+		thread(scale_up).detach();
 		return;
 	}
 
@@ -88,7 +90,7 @@ static void analyze_vm_state(CLIENT_USAGE_DATA usage_data) {
 	)
 	{
 		// scale vm down ..
-		//thread(scale_down, usage_data.ip).detach();
+		thread(scale_down, usage_data.ip).detach();
 		return;
 	}
 
@@ -106,62 +108,57 @@ int main(void) {
 	});
 
 	svr.Post(".*", [&](const Request& req, Response& res)
+	{
+		if (req.path == "/ping")
 		{
+			ltf("PING FROM VM: ", req.remote_addr, " STATUS: ", req.body);
 
-			if (req.path == "/ping")
+			JsonMessage.Parse(req.body.c_str());
+			if (JsonMessage.HasParseError())
 			{
-				cout << endl << "------ BODY ------" << endl << req.body << endl << "------ BODY ------" << endl;
-
-				JsonMessage.Parse(req.body.c_str());
-
-				if (JsonMessage.HasParseError())
-				{
-					cerr << "Error parsing `aslb_config.json`: " << JsonMessage.GetParseError() << endl;
-				}
-
-				auto client_usage_map_it = client_usage_map.find(req.remote_addr);
-
-				if (client_usage_map_it == client_usage_map.end())
-				{
-					CLIENT_USAGE_DATA cud;
-
-					cud.cpus = JsonMessage["cpus"].GetInt();
-					cud.cpuUsage = JsonMessage["cpuUsage"].GetFloat();
-					cud.memUsage = JsonMessage["memoryUsage"].GetFloat();
-					cud.systemUptime = JsonMessage["systemUptime"].GetFloat();
-					cud.freeMemoryInMB = JsonMessage["freeMemoryInMB"].GetFloat();
-					cud.totalMemory = JsonMessage["totalMemory"].GetFloat();
-					cud.ip = req.remote_addr;
-					cud.lastUpdated = chrono::steady_clock::now();
-					//cud.ipPoolIndex = find(IP_POOL.begin(), IP_POOL.end(), req.remote_addr);
-
-					client_usage_map.emplace(req.remote_addr, cud);
-
-					analyze_vm_state(cud);
-				}
-
-				else
-				{
-					auto& temp = *client_usage_map_it;
-
-					temp.second.cpuUsage = JsonMessage["cpuUsage"].GetFloat();
-					temp.second.memUsage = JsonMessage["memoryUsage"].GetFloat();
-					temp.second.systemUptime = JsonMessage["systemUptime"].GetFloat();
-					temp.second.freeMemoryInMB = JsonMessage["freeMemoryInMB"].GetFloat();
-					temp.second.totalMemory = JsonMessage["totalMemory"].GetFloat();
-					temp.second.lastUpdated = chrono::steady_clock::now();
-
-					analyze_vm_state(temp.second);
-				}
-				res.status = 200;
+				ltf("Error parsing `PING REQUEST PAYLOAD`: ", JsonMessage.GetParseError());
 			}
-			else if (req.path == "/ping_error") {
-				cout << endl << "------ BODY ------" << endl << req.body << endl << "------ BODY ------" << endl;
+
+			auto client_usage_map_it = client_usage_map.find(req.remote_addr);
+
+			if (client_usage_map_it == client_usage_map.end())
+			{
+				CLIENT_USAGE_DATA cud;
+
+				cud.cpus = JsonMessage["cpus"].GetInt();
+				cud.cpuUsage = JsonMessage["cpuUsage"].GetFloat();
+				cud.memUsage = JsonMessage["memoryUsage"].GetFloat();
+				cud.systemUptime = JsonMessage["systemUptime"].GetFloat();
+				cud.freeMemoryInMB = JsonMessage["freeMemoryInMB"].GetFloat();
+				cud.totalMemory = JsonMessage["totalMemory"].GetFloat();
+				cud.ip = req.remote_addr;
+				cud.lastUpdated = chrono::steady_clock::now();
+
+				client_usage_map.emplace(req.remote_addr, cud);
+				analyze_vm_state(cud);
 			}
-			else {
-				request_handler(req, res);
+			else
+			{
+				auto& temp = *client_usage_map_it;
+
+				temp.second.cpuUsage = JsonMessage["cpuUsage"].GetFloat();
+				temp.second.memUsage = JsonMessage["memoryUsage"].GetFloat();
+				temp.second.systemUptime = JsonMessage["systemUptime"].GetFloat();
+				temp.second.freeMemoryInMB = JsonMessage["freeMemoryInMB"].GetFloat();
+				temp.second.totalMemory = JsonMessage["totalMemory"].GetFloat();
+				temp.second.lastUpdated = chrono::steady_clock::now();
+
+				analyze_vm_state(temp.second);
 			}
-		});
+			res.status = 200;
+		}
+		else if (req.path == "/ping_error") {
+			ltf("PING ERROR OCCURED: ", JsonMessage.GetParseError());
+		}
+		else {
+			request_handler(req, res);
+		}
+	});
 
 	svr.Get(".*", [](const Request& req, Response& res) {
 		if (req.path == "/status/status") {
@@ -187,8 +184,9 @@ int main(void) {
 		request_handler(req, res);
 	});
 
+	//ltf("SERVER STARTED ON PORT: [4000]");
 	cout << "SERVER STARTED ON PORT: [4000]" << endl;
-	svr.listen("2401:4900:1c96:c1de:dfb:d7e4:c657:6f6e", 4000);
+	svr.listen("2401:4900:1c97:b0f:862:1863:aa28:4766", 4000);
 
 	return 0;
 }
