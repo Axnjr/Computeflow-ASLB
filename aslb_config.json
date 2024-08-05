@@ -15,11 +15,11 @@
   ],
   "port": 5000,
   "scalingPolicies": {
-    "idealCPU": 50,
-    "maxCPU": 70,
-    "maxMemory": 70,
-    "minCPU": 2,
-    "minMemory": 2
+    "idealCPU": 50.0,
+    "maxCPU": 70.0,
+    "maxMemory": 70.0,
+    "minCPU": 2.0,
+    "minMemory": 2.0
   },
   "vmCount": 5,
   "type": "advanced",
