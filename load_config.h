@@ -47,7 +47,7 @@ void initialize_static_memory_from_config() {
     ifstream config_file("aslb_config.json");
 
     if (!config_file.is_open()) {
-        ltf("\n Unable to open `aslb_config.json` \n");
+        ltf("Unable to open `aslb_config.json`");
         throw runtime_error("Unable to open config file");
     }
 
@@ -59,13 +59,13 @@ void initialize_static_memory_from_config() {
     string validation_response = validate_config_json(doc);
     if (!validation_response.empty()) {
         ltf(
-            "\n Error Validating `aslb.config.json` file. Either the property: `",
+            "Error Validating `aslb.config.json` file. Either the property: `",
             validation_response,
-            "` is missing or has wrong data type !! \n"
+            "` is missing or has wrong data type !!"
         );
     }
 
-    ltf("\n DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool` \n");
+    ltf("DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool`");
 
     for (const auto& ip : doc["ipPoolDev"].GetArray()) {
         if (ip.IsString()) {
@@ -92,19 +92,19 @@ void initialize_static_memory_from_config() {
     LB_CONFIG::min_cpu_usage = scalingPolicies["minCPU"].GetFloat();
     LB_CONFIG::min_mem_usage = scalingPolicies["minMemory"].GetFloat();
 
-    ltf("\n -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- \n");
+    ltf(" -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- ");
 
-    ltf("\n PORT:          "                  ,LB_CONFIG::PORT                                 ,"\n");
-    ltf("\n ENV:           "                  ,LB_CONFIG::env                                  ,"\n");
-    ltf("\n SCRIPT:        "                  ,LB_CONFIG::script                               ,"\n");
-    ltf("\n VM_TYPE:       "                  ,LB_CONFIG::vm_type                              ,"\n");
-    ltf("\n MAX_CPU_USAGE: "                  ,LB_CONFIG::max_cpu_usage                        ,"\n");
-    ltf("\n MIN_CPU_USAGE: "                  ,LB_CONFIG::min_cpu_usage                        ,"\n");
-    ltf("\n MAX_MEM_USAGE: "                  ,LB_CONFIG::max_mem_usage                        ,"\n");
-    ltf("\n MIN_MEM_USAGE: "                  ,LB_CONFIG::min_mem_usage                        ,"\n");
+    ltf("PORT:             "                  ,LB_CONFIG::PORT                                  );
+    ltf("ENV:              "                  ,LB_CONFIG::env                                   );
+    ltf("SCRIPT:           "                  ,LB_CONFIG::script                                );
+    ltf("VM_TYPE:          "                  ,LB_CONFIG::vm_type                               );
+    ltf("MAX_CPU_USAGE:    "                  ,LB_CONFIG::max_cpu_usage                         );
+    ltf("MIN_CPU_USAGE:    "                  ,LB_CONFIG::min_cpu_usage                         );
+    ltf("MAX_MEM_USAGE:    "                  ,LB_CONFIG::max_mem_usage                         );
+    ltf("MIN_MEM_USAGE:    "                  ,LB_CONFIG::min_mem_usage                         );
 
     for (const auto& ip : LB_CONFIG::IP_POOL) {
-    ltf("\n IP:            "                  ,ip                                              ,"\n");
+    ltf("IP:               "                  ,ip                                               );
     }
 }
 

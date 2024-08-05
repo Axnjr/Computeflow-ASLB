@@ -72,7 +72,7 @@ bool scale_up() {
 
 		while (max_attempt_to_fetch_ip < 10) {
 
-			std::this_thread::sleep_for(std::chrono::seconds(15));
+			std::this_thread::sleep_for(std::chrono::seconds(5));
 			Aws::EC2::Model::DescribeInstancesOutcome outcome = ec2Client.DescribeInstances(describe);
 
 			if (outcome.IsSuccess()) 
