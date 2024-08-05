@@ -1,0 +1,54 @@
+2024-08-05 09:27:22 - DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool`
+2024-08-05 09:27:22 -  -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- 
+2024-08-05 09:27:22 - 
+ PORT:          5000
+2024-08-05 09:27:22 - 
+ ENV:           _API_KEY=2W3E4R5T6Y7U8FVGBHN; MODE=DEV
+2024-08-05 09:27:22 - 
+ SCRIPT:        npm install 
+ npm run build 
+ npm start
+2024-08-05 09:27:22 - 
+ VM_TYPE:       t2.micro
+2024-08-05 09:27:22 - 
+ MAX_CPU_USAGE: 70
+2024-08-05 09:27:22 - 
+ MIN_CPU_USAGE: 2
+2024-08-05 09:27:22 - 
+ MAX_MEM_USAGE: 70
+2024-08-05 09:27:22 - 
+ MIN_MEM_USAGE: 2
+2024-08-05 09:27:22 - 
+ IP:            axn.vercel.app
+2024-08-05 09:27:22 - 
+ IP:            www.chatgpt.com
+2024-08-05 09:27:22 - 
+ IP:            www.google.com
+2024-08-05 09:27:22 - 
+ IP:            www.github.com
+2024-08-05 09:27:22 - 
+ IP:            www.youtube.com
+2024-08-05 09:27:22 - SERVER STARTED ON PORT: [4000]
+[2024-08-05 09:29:27] ? DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool`
+[2024-08-05 09:29:27] ?  -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- 
+[2024-08-05 09:29:27] ? PORT:             5000
+[2024-08-05 09:29:27] ? ENV:              _API_KEY=2W3E4R5T6Y7U8FVGBHN; MODE=DEV
+[2024-08-05 09:29:27] ? SCRIPT:           npm install 
+ npm run build 
+ npm start
+[2024-08-05 09:29:27] ? VM_TYPE:          t2.micro
+[2024-08-05 09:29:27] ? MAX_CPU_USAGE:    70
+[2024-08-05 09:29:27] ? MIN_CPU_USAGE:    2
+[2024-08-05 09:29:27] ? MAX_MEM_USAGE:    70
+[2024-08-05 09:29:27] ? MIN_MEM_USAGE:    2
+[2024-08-05 09:29:27] ? 
+ IP:            axn.vercel.app
+[2024-08-05 09:29:27] ? 
+ IP:            www.chatgpt.com
+[2024-08-05 09:29:27] ? 
+ IP:            www.google.com
+[2024-08-05 09:29:27] ? 
+ IP:            www.github.com
+[2024-08-05 09:29:27] ? 
+ IP:            www.youtube.com
+[2024-08-05 09:29:27] ? SERVER STARTED ON PORT: [4000]
