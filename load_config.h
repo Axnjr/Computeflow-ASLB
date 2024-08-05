@@ -8,16 +8,46 @@
 #include "lb_config_struct.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
+#include "logger.h"
 
 using namespace std;
 using namespace rapidjson;
 
+string validate_config_json(const Document& doc) {
+
+    if (doc.HasParseError()) return "JSON PARSE ERROR";
+
+    if (!doc.HasMember("port") || !doc["port"].IsInt()) return "port";
+    if (!doc.HasMember("maxVms") || !doc["maxVms"].IsInt()) return "maxVms";
+    if (!doc.HasMember("minVms") || !doc["minVms"].IsInt()) return "minVms";
+    if (!doc.HasMember("vmCount") || !doc["vmCount"].IsInt()) return "vmCount";
+    if (!doc.HasMember("amiId") || !doc["amiId"].IsString()) return "amiId";
+    if (!doc.HasMember("ipPoolDev") || !doc["ipPoolDev"].IsArray()) return "ipPollDev";
+    if (!doc.HasMember("vmMetaData") || !doc["vmMetaData"].IsObject()) return "vmMetaData";
+    if (!doc.HasMember("scalingPolicies") || !doc["scalingPolicies"].IsObject()) return "scalingPolicies";
+
+    const Value& vmMetaData = doc["vmMetaData"];
+    if (!vmMetaData.HasMember("enviromentVariables") || !vmMetaData["enviromentVariables"].IsString()) return "enviromentVariables";
+    if (!vmMetaData.HasMember("script") || !vmMetaData["script"].IsString()) return "script";
+    if (!vmMetaData.HasMember("vmType") || !vmMetaData["vmType"].IsString()) return "vmType";
+
+    const Value& scalingPolicies = doc["scalingPolicies"];
+    if (!scalingPolicies.HasMember("maxCPU") || !scalingPolicies["maxCPU"].IsFloat()) return "maxCPU";
+    if (!scalingPolicies.HasMember("minCPU") || !scalingPolicies["minCPU"].IsFloat()) return "minCPU";
+    if (!scalingPolicies.HasMember("maxMemory") || !scalingPolicies["maxMemory"].IsFloat()) return "maxMemory";
+    if (!scalingPolicies.HasMember("minMemory") || !scalingPolicies["minMemory"].IsFloat()) return "minMemory";
+
+    return "";
+}
+
 void initialize_static_memory_from_config() {
+
+    using namespace logger;
 
     ifstream config_file("aslb_config.json");
 
     if (!config_file.is_open()) {
-        cerr << "Unable to open `aslb_config.json`" << endl;
+        ltf("\n Unable to open `aslb_config.json` \n");
         throw runtime_error("Unable to open config file");
     }
 
@@ -26,17 +56,16 @@ void initialize_static_memory_from_config() {
     Document doc;
     doc.Parse(json.c_str());
 
-    if (doc.HasParseError()) {
-        cerr << "Error parsing `aslb_config.json`: " << doc.GetParseError() << endl;
-        throw runtime_error("JSON parse error");
+    string validation_response = validate_config_json(doc);
+    if (!validation_response.empty()) {
+        ltf(
+            "\n Error Validating `aslb.config.json` file. Either the property: `",
+            validation_response,
+            "` is missing or has wrong data type !! \n"
+        );
     }
 
-    cout << endl << "DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool`" << endl;
-
-    if (!doc.HasMember("ipPoolDev") || !doc["ipPoolDev"].IsArray()) {
-        cerr << "Invalid JSON: 'ipPoolDev' property is missing or not an array" << endl;
-        throw runtime_error("Invalid JSON: 'ipPoolDev' property");
-    }
+    ltf("\n DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool` \n");
 
     for (const auto& ip : doc["ipPoolDev"].GetArray()) {
         if (ip.IsString()) {
@@ -50,66 +79,32 @@ void initialize_static_memory_from_config() {
     LB_CONFIG::vmCount = doc["vmCount"].GetInt();
     LB_CONFIG::ami_id = doc["amiId"].GetString();
 
-    if (doc.HasMember("vmMetaData") && doc["vmMetaData"].IsObject()) {
+    const Value& vmMetaData = doc["vmMetaData"];
 
-        const Value& vmMetaData = doc["vmMetaData"];
+    LB_CONFIG::env = vmMetaData["enviromentVariables"].GetString();
+    LB_CONFIG::script = vmMetaData["script"].GetString();
+    LB_CONFIG::vm_type = vmMetaData["vmType"].GetString();
 
-        if (vmMetaData.HasMember("enviromentVariables")) {
-            LB_CONFIG::env = vmMetaData["enviromentVariables"].GetString();
-        }
+    const Value& scalingPolicies = doc["scalingPolicies"];
 
-        if (vmMetaData.HasMember("script")) {
-            LB_CONFIG::script = vmMetaData["script"].GetString();
-        }
+    LB_CONFIG::max_cpu_usage = scalingPolicies["maxCPU"].GetFloat();
+    LB_CONFIG::max_mem_usage = scalingPolicies["maxMemory"].GetFloat();
+    LB_CONFIG::min_cpu_usage = scalingPolicies["minCPU"].GetFloat();
+    LB_CONFIG::min_mem_usage = scalingPolicies["minMemory"].GetFloat();
 
-        if (vmMetaData.HasMember("vmType")) {
-            LB_CONFIG::vm_type = vmMetaData["vmType"].GetString();
-        }
+    ltf("\n -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- \n");
 
-        /*if (vmMetaData.HasMember("vmIds")) {
-            for (const auto& id : doc["vmIds"].GetArray()) {
-                if (id.IsString()) {
-                    LB_CONFIG::IP_POOL.push_back(id.GetString());
-                }
-            }
-        }*/
-    }
-
-    if (doc.HasMember("scalingPolicies")) {
-
-        const Value& scalingPolicies = doc["scalingPolicies"];
-
-        if (scalingPolicies.HasMember("maxCPU")) {
-            LB_CONFIG::max_cpu_usage = scalingPolicies["maxCPU"].GetFloat();
-        }
-
-        if (scalingPolicies.HasMember("maxMemory")) {
-            LB_CONFIG::max_mem_usage = scalingPolicies["maxMemory"].GetFloat();
-        }
-
-        if (scalingPolicies.HasMember("minCPU")) {
-            LB_CONFIG::min_cpu_usage = scalingPolicies["minCPU"].GetFloat();
-        }
-
-        if (scalingPolicies.HasMember("minMemory")) {
-            LB_CONFIG::min_mem_usage = scalingPolicies["minMemory"].GetFloat();
-        }
-    }
-
-    cout << endl << "--------------------- CONFIG FILE READ SUCCESSFULLY -----------------------" << endl;
-
-    cout << "PORT: " << LB_CONFIG::PORT << endl;
-    cout << "ENV: " << LB_CONFIG::env << endl;
-    cout << "SCRIPT: " << LB_CONFIG::script << endl;
-    //cout << "VM_ID: " << LB_CONFIG::vm_id << endl;
-    cout << "VM_TYPE: " << LB_CONFIG::vm_type << endl;
-    cout << "MAX_CPU_USAGE: " << LB_CONFIG::max_cpu_usage << endl;
-    cout << "MIN_CPU_USAGE: " << LB_CONFIG::min_cpu_usage << endl;
-    cout << "MAX_MEM_USAGE: " << LB_CONFIG::max_mem_usage << endl;
-    cout << "MIN_MEM_USAGE: " << LB_CONFIG::min_mem_usage << endl;
+    ltf("\n PORT:          "                  ,LB_CONFIG::PORT                                 ,"\n");
+    ltf("\n ENV:           "                  ,LB_CONFIG::env                                  ,"\n");
+    ltf("\n SCRIPT:        "                  ,LB_CONFIG::script                               ,"\n");
+    ltf("\n VM_TYPE:       "                  ,LB_CONFIG::vm_type                              ,"\n");
+    ltf("\n MAX_CPU_USAGE: "                  ,LB_CONFIG::max_cpu_usage                        ,"\n");
+    ltf("\n MIN_CPU_USAGE: "                  ,LB_CONFIG::min_cpu_usage                        ,"\n");
+    ltf("\n MAX_MEM_USAGE: "                  ,LB_CONFIG::max_mem_usage                        ,"\n");
+    ltf("\n MIN_MEM_USAGE: "                  ,LB_CONFIG::min_mem_usage                        ,"\n");
 
     for (const auto& ip : LB_CONFIG::IP_POOL) {
-        cout << "IP: " << ip << endl;
+    ltf("\n IP:            "                  ,ip                                              ,"\n");
     }
 }
 
