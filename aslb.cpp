@@ -13,9 +13,8 @@ using namespace std;
 using namespace httplib;
 
 struct CLIENT_USAGE_DATA {
-	string ip;
 
-	//int ipPoolIndex = -1;
+	string ip;
 	int cpus;
 
 	float freeMemoryInMB;
@@ -29,8 +28,6 @@ struct CLIENT_USAGE_DATA {
 
 ip_cache cache;
 
-stringstream LB_LOGS; // HERE
-
 int ip_cache::cap = 100;
 list<string> ip_cache::lru;
 unordered_map<string, pair<list<string>::iterator, int>> ip_cache::lru_map;
@@ -39,15 +36,19 @@ unordered_map<string, CLIENT_USAGE_DATA> client_usage_map;
 static int HTTP_REQUEST_COUNT = 0;
 
 static string map_clientIp_to_serverIp(string ip) {
+
 	int r = cache.find_ip(ip, HTTP_REQUEST_COUNT);
+
 	if (r != -1) {
 		return LB_CONFIG::IP_POOL[r];
 	}
+
 	else if (HTTP_REQUEST_COUNT >= LB_CONFIG::IP_POOL.size()) {
 		HTTP_REQUEST_COUNT = 0;
-		cout << "REQUEST COUNT RESET !!" << endl;
+		//cout << "REQUEST COUNT RESET !!" << endl;
 	}
-	cout << "REQUEST COUNT: " << HTTP_REQUEST_COUNT << endl;
+
+	//cout << "REQUEST COUNT: " << HTTP_REQUEST_COUNT << endl;
 	return LB_CONFIG::IP_POOL[HTTP_REQUEST_COUNT++];
 }
 
@@ -60,6 +61,7 @@ static void request_handler(const Request& req, Response& res) {
 }
 
 static void analyze_vm_state(CLIENT_USAGE_DATA usage_data) {
+
 	if(
 		(
 			usage_data.cpuUsage > LB_CONFIG::max_cpu_usage
@@ -71,7 +73,7 @@ static void analyze_vm_state(CLIENT_USAGE_DATA usage_data) {
 	)
 	{
 		// scale vm up ..
-		thread(scale_up).detach();
+		//thread(scale_up).detach();
 		return;
 	}
 
@@ -86,9 +88,10 @@ static void analyze_vm_state(CLIENT_USAGE_DATA usage_data) {
 	)
 	{
 		// scale vm down ..
-		thread(scale_down, usage_data.ip).detach();
+		//thread(scale_down, usage_data.ip).detach();
+		return;
 	}
-	return;
+
 }
 
 int main(void) {
@@ -161,7 +164,6 @@ int main(void) {
 		});
 
 	svr.Get(".*", [](const Request& req, Response& res) {
-		cout << endl << "CLIENT-IP: " << req.path << endl;
 		if (req.path == "/status/status") {
 			res.set_content(getLBConfigAsJson(), "text/json");
 		}
@@ -186,7 +188,7 @@ int main(void) {
 	});
 
 	cout << "SERVER STARTED ON PORT: [4000]" << endl;
-	svr.listen("2401:4900:1c21:2153:8dc4:e44f:9fe8:fea9", 4000);
+	svr.listen("2401:4900:1c96:c1de:dfb:d7e4:c657:6f6e", 4000);
 
 	return 0;
 }
