@@ -1,6 +1,6 @@
 const axios = require('axios');
 const os = require('os-utils');
-const URL = "http://[2401:4900:1c21:2153:8dc4:e44f:9fe8:fea9]:4000";
+const URL = "http://localhost:4000";
 const INTERVAL = 1000; // 60 seconds
 const CLIENT_ID = "client_1";
 const sendMetrics = async () => {
