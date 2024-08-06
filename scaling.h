@@ -1,27 +1,24 @@
 #pragma once
-
 #ifndef LB_SCALING_H
 #define LB_SCALING_H
-
 #include "aws/ec2/model/TerminateInstancesResponse.h"
-#include "aws/ec2/model/TerminateInstancesRequest.h"
-#include "aws/ec2/model/DescribeInstancesResponse.h"
 #include "aws/ec2/model/DescribeInstancesRequest.h"
-#include "aws/ec2/model/RunInstancesRequest.h"
 #include "dependencies/httplib.h"
+#include "aws/ec2/model/RunInstancesRequest.h"
 #include "cpr/cpr.h"
 #include "aws/core/Aws.h"
+#include "aws/ec2/model/TerminateInstancesRequest.h"
 #include "aws/ec2/EC2Client.h"
 #include "logger.h"
+#include "aws/ec2/model/DescribeInstancesResponse.h"
+#include "lb_config_struct.h"
 
 using namespace std;
 using namespace logger;
 
 bool scale_up() {
 
-	ltf("scaling.h/scale_up");
-
-	cout << "\n Scaling-up fleet in progress ! \n";
+	ltf("Scaling-up fleet in progress !");
 
 	Aws::SDKOptions options;
 	Aws::InitAPI(options);
@@ -110,10 +107,11 @@ bool scale_up() {
 	return false;
 }
 
-
 bool scale_down(string ip) {
 
-	cout << "\n Scaling-down fleet in progress \n";
+	cout << "\n GOT IP FOR SCALING DOWN: " << ip << endl;
+
+	ltf("Scaling-down fleet in progress !");
 
 	Aws::SDKOptions options;
 	Aws::InitAPI(options);
