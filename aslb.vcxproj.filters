@@ -34,9 +34,6 @@
     <ClInclude Include="load_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fetch_response.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>

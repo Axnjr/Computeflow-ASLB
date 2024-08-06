@@ -139,7 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aslb_status.h" />
-    <ClInclude Include="fetch_response.h" />
     <ClInclude Include="dependencies\httplib.h" />
     <ClInclude Include="ip_cache.h" />
     <ClInclude Include="load_config.h" />
