@@ -1,8 +1,17 @@
 #include "dependencies/httplib.h"
 #include "logger.h"
+#include <chrono>
 
 using namespace std;
 using namespace httplib;
+
+static string timePointToString(const chrono::system_clock::time_point& tp) {
+    time_t time = chrono::system_clock::to_time_t(tp);
+    tm* tm = std::localtime(&time);
+    ostringstream oss;
+    oss << put_time(tm, "%Y-%m-%d %H:%M:%S");
+    return oss.str();
+}
 
 static string stringify_headers(const Headers& headers) {
     string s;
@@ -20,7 +29,7 @@ static string log(const Request& req, const Response& res) {
     string query;
     char buf[BUFSIZ];
 
-    s += "\n =========================================================================================== \n";
+    s += "\n===========================================================================================\n";
 
     snprintf(buf, sizeof(buf), "%s %s %s", req.method.c_str(),
     req.version.c_str(), req.path.c_str());
@@ -43,7 +52,7 @@ static string log(const Request& req, const Response& res) {
 
     s += buf;
     s += stringify_headers(res.headers);
-    s += "\n =========================================================================================== \n";
+    s += "\n===========================================================================================\n";
 
     logger::ltf(s);
     return s;

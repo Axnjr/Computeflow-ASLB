@@ -9,6 +9,7 @@
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 #include "logger.h"
+#include "aslb_status.h"
 
 using namespace std;
 using namespace rapidjson;
@@ -22,6 +23,7 @@ string validate_config_json(const Document& doc) {
     if (!doc.HasMember("minVms") || !doc["minVms"].IsInt()) return "minVms";
     if (!doc.HasMember("vmCount") || !doc["vmCount"].IsInt()) return "vmCount";
     if (!doc.HasMember("amiId") || !doc["amiId"].IsString()) return "amiId";
+    if (!doc.HasMember("notificationMailId") || !doc["notificationMailId"].IsString()) return "notificationMailId";
     if (!doc.HasMember("ipPoolDev") || !doc["ipPoolDev"].IsArray()) return "ipPollDev";
     if (!doc.HasMember("vmMetaData") || !doc["vmMetaData"].IsObject()) return "vmMetaData";
     if (!doc.HasMember("scalingPolicies") || !doc["scalingPolicies"].IsObject()) return "scalingPolicies";
@@ -78,6 +80,7 @@ void initialize_static_memory_from_config() {
     LB_CONFIG::minVms = doc["minVms"].GetInt();
     LB_CONFIG::vmCount = doc["vmCount"].GetInt();
     LB_CONFIG::ami_id = doc["amiId"].GetString();
+    LB_CONFIG::mail_id = doc["notificationMailId"].GetString();
 
     const Value& vmMetaData = doc["vmMetaData"];
 
@@ -94,21 +97,21 @@ void initialize_static_memory_from_config() {
 
     ltf(" -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- ");
 
-    ltf("PORT:             "                  ,LB_CONFIG::PORT                                  );
-    ltf("ENV:              "                  ,LB_CONFIG::env                                   );
-    ltf("SCRIPT:           "                  ,LB_CONFIG::script                                );
-    ltf("VM_TYPE:          "                  ,LB_CONFIG::vm_type                               );
-    ltf("MAX_CPU_USAGE:    "                  ,LB_CONFIG::max_cpu_usage                         );
-    ltf("MIN_CPU_USAGE:    "                  ,LB_CONFIG::min_cpu_usage                         );
-    ltf("MAX_MEM_USAGE:    "                  ,LB_CONFIG::max_mem_usage                         );
-    ltf("MIN_MEM_USAGE:    "                  ,LB_CONFIG::min_mem_usage                         );
+    ltf("PORT          :    "                  ,LB_CONFIG::PORT                                  );
+    ltf("ENV           :    "                  ,LB_CONFIG::env                                   );
+    ltf("SCRIPT        :    "                  ,LB_CONFIG::script                                );
+    ltf("VM_TYPE       :    "                  ,LB_CONFIG::vm_type                               );
+    ltf("MAX_CPU_USAGE :    "                  ,LB_CONFIG::max_cpu_usage                         );
+    ltf("MIN_CPU_USAGE :    "                  ,LB_CONFIG::min_cpu_usage                         );
+    ltf("MAX_MEM_USAGE :    "                  ,LB_CONFIG::max_mem_usage                         );
+    ltf("MIN_MEM_USAGE :    "                  ,LB_CONFIG::min_mem_usage                         );
 
     for (const auto& ip : LB_CONFIG::IP_POOL) {
-    ltf("IP:               "                  ,ip                                               );
+    ltf("IP            :    "                  ,ip                                               );
     }
 }
 
-string getLBConfigAsJson() {
+string getLBConfigAsJson(int64_t req, std::string time_point) {
 
     Document doc;
     doc.SetObject();
@@ -124,13 +127,18 @@ string getLBConfigAsJson() {
 
     doc.AddMember("env", Value().SetString(LB_CONFIG::env.c_str(), allocator), allocator);
     doc.AddMember("script", Value().SetString(LB_CONFIG::script.c_str(), allocator), allocator);
-    //doc.AddMember("vm_id", Value().SetString(LB_CONFIG::vm_id.c_str(), allocator), allocator);
     doc.AddMember("vm_type", Value().SetString(LB_CONFIG::vm_type.c_str(), allocator), allocator);
+    doc.AddMember("CURRENT_STATUS", Value().SetString(getLBStatus().c_str(), allocator), allocator);
 
     doc.AddMember("max_cpu_usage", LB_CONFIG::max_cpu_usage, allocator);
     doc.AddMember("min_cpu_usage", LB_CONFIG::min_cpu_usage, allocator);
     doc.AddMember("max_mem_usage", LB_CONFIG::max_mem_usage, allocator);
     doc.AddMember("min_mem_usage", LB_CONFIG::min_mem_usage, allocator);
+    doc.AddMember("vmCount", LB_CONFIG::vmCount, allocator);
+
+    doc.AddMember("REQUESTS", req, allocator);
+
+    doc.AddMember("REQUESTS_UPDATED_AT", Value().SetString(time_point.c_str(), allocator), allocator);
 
     StringBuffer buffer;
     Writer<StringBuffer> writer(buffer);
