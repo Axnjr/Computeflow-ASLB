@@ -12,6 +12,7 @@ string LB_CONFIG::env = "";
 string LB_CONFIG::script = "";
 string LB_CONFIG::vm_type = "";
 string LB_CONFIG::ami_id = "";
+string LB_CONFIG::mail_id = "";
 
 float LB_CONFIG::max_cpu_usage = 0.0f;
 float LB_CONFIG::min_cpu_usage = 0.0f;

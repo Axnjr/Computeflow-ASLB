@@ -22,6 +22,7 @@ struct LB_CONFIG {
     static string script;
     static string vm_type;
     static string ami_id;
+    static string mail_id;
 
     static float max_cpu_usage;
     static float min_cpu_usage;
