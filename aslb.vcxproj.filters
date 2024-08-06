@@ -25,6 +25,7 @@
   <ItemGroup>
     <None Include="aslb_config.json" />
     <None Include="test_client.js" />
+    <None Include=".env" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ip_cache.h">
@@ -52,6 +53,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="notifications.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aslb_status.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

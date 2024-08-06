@@ -1,54 +1,1725 @@
-2024-08-05 09:27:22 - DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool`
-2024-08-05 09:27:22 -  -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- 
-2024-08-05 09:27:22 - 
- PORT:          5000
-2024-08-05 09:27:22 - 
- ENV:           _API_KEY=2W3E4R5T6Y7U8FVGBHN; MODE=DEV
-2024-08-05 09:27:22 - 
- SCRIPT:        npm install 
+[2024-08-06 15:53:22] ~ IP            :    www.youtube.com
+[2024-08-06 15:54:11] ~ DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool`
+[2024-08-06 15:54:11] ~  -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- 
+[2024-08-06 15:54:11] ~ PORT          :    5000
+[2024-08-06 15:54:11] ~ ENV           :    _API_KEY=2W3E4R5T6Y7U8FVGBHN; MODE=DEV
+[2024-08-06 15:54:11] ~ SCRIPT        :    npm install 
  npm run build 
  npm start
-2024-08-05 09:27:22 - 
- VM_TYPE:       t2.micro
-2024-08-05 09:27:22 - 
- MAX_CPU_USAGE: 70
-2024-08-05 09:27:22 - 
- MIN_CPU_USAGE: 2
-2024-08-05 09:27:22 - 
- MAX_MEM_USAGE: 70
-2024-08-05 09:27:22 - 
- MIN_MEM_USAGE: 2
-2024-08-05 09:27:22 - 
- IP:            axn.vercel.app
-2024-08-05 09:27:22 - 
- IP:            www.chatgpt.com
-2024-08-05 09:27:22 - 
- IP:            www.google.com
-2024-08-05 09:27:22 - 
- IP:            www.github.com
-2024-08-05 09:27:22 - 
- IP:            www.youtube.com
-2024-08-05 09:27:22 - SERVER STARTED ON PORT: [4000]
-[2024-08-05 09:29:27] ? DATA LOADED FROM CONFIG IN `dev` MODE: REPLACE `ipPoolDev` WITH `ipPool`
-[2024-08-05 09:29:27] ?  -------------------------- CONFIG FILE READ SUCCESSFULLY --------------------------- 
-[2024-08-05 09:29:27] ? PORT:             5000
-[2024-08-05 09:29:27] ? ENV:              _API_KEY=2W3E4R5T6Y7U8FVGBHN; MODE=DEV
-[2024-08-05 09:29:27] ? SCRIPT:           npm install 
- npm run build 
- npm start
-[2024-08-05 09:29:27] ? VM_TYPE:          t2.micro
-[2024-08-05 09:29:27] ? MAX_CPU_USAGE:    70
-[2024-08-05 09:29:27] ? MIN_CPU_USAGE:    2
-[2024-08-05 09:29:27] ? MAX_MEM_USAGE:    70
-[2024-08-05 09:29:27] ? MIN_MEM_USAGE:    2
-[2024-08-05 09:29:27] ? 
- IP:            axn.vercel.app
-[2024-08-05 09:29:27] ? 
- IP:            www.chatgpt.com
-[2024-08-05 09:29:27] ? 
- IP:            www.google.com
-[2024-08-05 09:29:27] ? 
- IP:            www.github.com
-[2024-08-05 09:29:27] ? 
- IP:            www.youtube.com
-[2024-08-05 09:29:27] ? SERVER STARTED ON PORT: [4000]
+[2024-08-06 15:54:11] ~ VM_TYPE       :    t2.micro
+[2024-08-06 15:54:11] ~ MAX_CPU_USAGE :    70
+[2024-08-06 15:54:11] ~ MIN_CPU_USAGE :    2
+[2024-08-06 15:54:11] ~ MAX_MEM_USAGE :    70
+[2024-08-06 15:54:11] ~ MIN_MEM_USAGE :    2
+[2024-08-06 15:54:11] ~ IP            :    axn.vercel.app
+[2024-08-06 15:54:11] ~ IP            :    www.chatgpt.com
+[2024-08-06 15:54:11] ~ IP            :    www.google.com
+[2024-08-06 15:54:11] ~ IP            :    www.github.com
+[2024-08-06 15:54:11] ~ IP            :    www.youtube.com
+[2024-08-06 15:54:22] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55830
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:26] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55830
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 1954
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:26] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55830
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:29] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55830
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3951
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:29] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55830
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 3
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:31] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55833
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 5937
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:31] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55833
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:32] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55833
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 7934
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:32] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55833
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:32] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55833
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 9931
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:32] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55837
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:33] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55837
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 11917
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:33] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55837
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:33] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55837
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 13915
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:33] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55837
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 3
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:33] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55838
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 15902
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:33] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55838
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:33] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55838
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 17900
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55838
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55838
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 19898
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55839
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55839
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 21885
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55839
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55839
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 23883
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55839
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 3
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55842
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 25870
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55842
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:34] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55842
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 27868
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55842
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55842
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 29866
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55843
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55843
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 31853
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55843
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55843
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 33851
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55843
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 3
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55844
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 35838
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:35] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55844
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55844
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 37836
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55844
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55844
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 39834
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55845
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55845
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 41821
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55845
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55845
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 43819
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55845
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 3
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:36] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55846
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 45806
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:37] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55846
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:37] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55846
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 47804
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:37] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55846
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:37] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55846
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 49802
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:37] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55847
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:37] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55847
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 51789
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:37] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55847
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:37] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55847
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 53787
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:38] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55847
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 3
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:38] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55848
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 55774
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:38] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55848
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:38] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55848
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 57772
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:38] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55848
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+
+[2024-08-06 15:54:38] ~ 
+===========================================================================================
+GET HTTP/1.1 /logs/logs
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55848
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Connection: close
+Content-Length: 59770
+Content-Type: text/plain
+
+===========================================================================================
+
+[2024-08-06 15:54:38] ~ 
+===========================================================================================
+GET HTTP/1.1 /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9,ar;q=0.8
+Connection: keep-alive
+Host: localhost:4000
+LOCAL_ADDR: ::1
+LOCAL_PORT: 4000
+Referer: http://localhost:4000/logs/logs
+REMOTE_ADDR: ::1
+REMOTE_PORT: 55849
+sec-ch-ua: "Not)A;Brand";v="99", "Google Chrome";v="127", "Chromium";v="127"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Sec-Fetch-Dest: image
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
+200
+Content-Length: 3
+Content-Type: text/plain
+Keep-Alive: timeout=5, max=5
+
+===========================================================================================
+

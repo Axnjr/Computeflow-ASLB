@@ -133,10 +133,12 @@
     <ClCompile Include="lb_config_struct.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".env" />
     <None Include="aslb_config.json" />
     <None Include="test_client.js" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aslb_status.h" />
     <ClInclude Include="fetch_response.h" />
     <ClInclude Include="dependencies\httplib.h" />
     <ClInclude Include="ip_cache.h" />
