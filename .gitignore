@@ -14,7 +14,7 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
+
 
 # Fortran module files
 *.mod
@@ -27,12 +27,10 @@
 *.lib
 
 # Executables
-*.exe
 *.out
 *.app
 
 .vs
-x64
 aslb
 lib
 node_modules
