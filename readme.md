@@ -29,3 +29,5 @@ mcr.microsoft.com/windows/servercore:ltsc2019: failed to resolve source metadata
 ![image](https://github.com/user-attachments/assets/fb582b36-d32a-40c6-909e-4059b058dc15)
 
 ### **You also contribute by giving this repo a star or fork 🤙🤗**
+# Lisence
+[Apache License 2.0](https://github.com/Axnjr/computeflow-ASLB/blob/master/LICENSE)
