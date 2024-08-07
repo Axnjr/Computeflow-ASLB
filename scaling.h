@@ -10,13 +10,14 @@
 #include "aws/ec2/model/TerminateInstancesRequest.h"
 #include "aws/ec2/EC2Client.h"
 #include "logger.h"
+#include "notifications.h"
 #include "aws/ec2/model/DescribeInstancesResponse.h"
 #include "lb_config_struct.h"
 
 using namespace std;
 using namespace logger;
 
-bool scale_up() {
+bool scale_up(float cpuUsage, float memUsage) {
 
 	ltf("Scaling-up fleet in progress !");
 
@@ -84,7 +85,19 @@ bool scale_up() {
 					"\n"
 				);
 
-				if (!new_vm_ip.empty()) {
+				if (!new_vm_ip.empty()) 
+				{
+					notify_via_email(
+						"Traffic Increased !!",
+
+						"The load-balancer added a VM to the fleet due to incresed traffic, at: " +
+						timePointToString(chrono::system_clock::now()) +
+						"\n CPU UASGE: " +
+						to_string(cpuUsage) +
+						"\n MEMORY CONSUMPTION: " +
+						to_string(memUsage)
+					);
+
 					return true;
 				}
 			}
@@ -104,10 +117,22 @@ bool scale_up() {
 	}
 
 	Aws::ShutdownAPI(options);
+
+	notify_via_email(
+		"Traffic Increased! Error in Scaling",
+		"The load-balancer tried to add a VM to the fleet due to incresed traffic, at: " +
+		timePointToString(chrono::system_clock::now()) +
+		"\n CPU UASGE: " +
+		to_string(cpuUsage) +
+		"\n MEMORY CONSUMPTION: " +
+		to_string(memUsage) +
+		"SOME UN-EXPECTED ERROR OCCURED, SCALING-UP NOT WORKED !"
+	);
+
 	return false;
 }
 
-bool scale_down(string ip) {
+bool scale_down(string ip, float cpuUsage, float memUsage) {
 
 	cout << "\n GOT IP FOR SCALING DOWN: " << ip << endl;
 
@@ -136,7 +161,19 @@ bool scale_down(string ip) {
 				describeOutcome.GetError().GetMessage(),
 				"\n"
 			);
+
 			Aws::ShutdownAPI(options);
+
+			notify_via_email(
+				"Traffic Decreased !!",
+				"The load-balancer tried to remove a VM from the fleet due to decresed traffic, at: " +
+				timePointToString(chrono::system_clock::now()) +
+				"\n CPU UASGE: " +
+				to_string(cpuUsage) +
+				"\n MEMORY CONSUMPTION: " +
+				to_string(memUsage) +
+				"SOME UN-EXPECTED ERROR OCCURED, SCALING-DOWN NOT WORKED !"
+			);
 			return false;
 		}
 
@@ -152,12 +189,35 @@ bool scale_down(string ip) {
 				"\n"
 			);
 			Aws::ShutdownAPI(options);
+
+			notify_via_email(
+				"Traffic Decreased !!",
+				"The load-balancer tried to remove a VM from the fleet due to decresed traffic, at: " +
+				timePointToString(chrono::system_clock::now()) +
+				"\n CPU UASGE: " +
+				to_string(cpuUsage) +
+				"\n MEMORY CONSUMPTION: " +
+				to_string(memUsage) +
+				"SOME UN-EXPECTED ERROR OCCURED, SCALING-DOWN NOT WORKED !"
+			);
+
 			return false;
 		}
 
 		ltf("1 VM REMOED FROM FLEET !!");
 
 		Aws::ShutdownAPI(options);
+
+		notify_via_email(
+			"Traffic Decreased !!",
+			"The load-balancer removed a VM from the fleet due to decresed traffic, at: " +
+			timePointToString(chrono::system_clock::now()) +
+			"\n CPU UASGE: " +
+			to_string(cpuUsage) +
+			"\n MEMORY CONSUMPTION: " +
+			to_string(memUsage)
+		);
+
 		return true;
 	}
 	catch (const std::exception& err)
@@ -166,6 +226,18 @@ bool scale_down(string ip) {
 	}
 
 	Aws::ShutdownAPI(options);
+
+	notify_via_email(
+		"Traffic Decreased !!",
+		"The load-balancer tried to remove a VM from the fleet due to decresed traffic, at: " +
+		timePointToString(chrono::system_clock::now()) +
+		"\n CPU UASGE: " +
+		to_string(cpuUsage) +
+		"\n MEMORY CONSUMPTION: " +
+		to_string(memUsage) +
+		"SOME UN-EXPECTED ERROR OCCURED, SCALING-DOWN NOT WORKED !"
+	);
+
 	return false;
 }
 

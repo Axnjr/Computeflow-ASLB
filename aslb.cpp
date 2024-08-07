@@ -6,7 +6,7 @@
 #include "utils.h"
 #include "rapidjson/document.h"
 #include "lb_config_struct.h"
-//#include "scaling.h"
+#include "scaling.h"
 #include "logger.h"
 #include "notifications.h"
 #include <iostream>
@@ -86,17 +86,7 @@ static void analyze_vm_state(CLIENT_USAGE_DATA usage_data) {
 	)
 	{
 		// scale vm up ..
-		//thread(scale_up).detach();
-		notify_via_email(
-			"Traffic Increased !!",
-
-			"The load-balancer added a VM to the fleet due to incresed traffic, at: " + 
-			timePointToString(chrono::system_clock::now()) +
-			"\n CPU UASGE: " +
-			to_string(usage_data.cpuUsage) +
-			"\n MEMORY CONSUMPTION: " + 
-			to_string(usage_data.memUsage)
-		);
+		std::thread(scale_up, usage_data.cpuUsage, usage_data.memUsage).detach();
 		return;
 	}
 
@@ -112,20 +102,9 @@ static void analyze_vm_state(CLIENT_USAGE_DATA usage_data) {
 	{
 		cout << endl << usage_data.cpuUsage << " | " << usage_data.memUsage << endl;
 		// scale vm down ..
-		//thread(scale_down, usage_data.ip).detach();
-		notify_via_email(
-			"Traffic Decreased !!",
-
-			"The load-balancer removed a VM from the fleet due to decresed traffic, at: " +
-			timePointToString(chrono::system_clock::now()) +
-			"\n CPU UASGE: " +
-			to_string(usage_data.cpuUsage) +
-			"\n MEMORY CONSUMPTION: " +
-			to_string(usage_data.memUsage)
-		);
+		std::thread(scale_down, usage_data.ip, usage_data.cpuUsage, usage_data.memUsage).detach();
 		return;
 	}
-
 }
 
 int main(void) {
