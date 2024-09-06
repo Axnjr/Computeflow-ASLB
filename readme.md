@@ -1,5 +1,5 @@
 # **Auto-Scaling, Load-Balancing Reverse Proxy Server**
-Highly available, lightning-fast application-level load balancer designed to distribute incoming traffic to target instances based on the Round-Robin algorithm or CPU and memory usage metrics collected from individual instances in the fleet. It features advanced configuration options and an auto-scaler that dynamically scales the fleet of instances in real time based on traffic demands.
+### Highly available, lightning-fast application-level load balancer designed to distribute incoming traffic to target instances based on the Round-Robin algorithm or CPU and memory usage metrics collected from individual instances in the fleet. It features advanced configuration options and an auto-scaler that dynamically scales the fleet of instances in real time based on traffic demands.
 
 # **Features**
 - Dynamic Auto Scaling
