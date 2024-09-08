@@ -2,19 +2,6 @@
   
   # **Auto-Scaling, Load-Balancing Reverse Proxy Server**
   
-  <br> 
-  
-  <a>![Static Badge](https://img.shields.io/badge/TypeSafe-8A28E2)</a> 
-  <a>![Static Badge](https://img.shields.io/badge/API%20Dev-%201A18A0)</a> 
-  <a>![Static Badge](https://img.shields.io/badge/OpenSource%20-%20%23fff?logoColor=%23fff&labelColor=%23fff&color=%23fff)</a>
-  <a>![Static Badge](https://img.shields.io/badge/Express-%20%20%23FF00FF)</a>
-  <a>![Static Badge](https://img.shields.io/badge/SWC-%20?logoColor=%23000&color=%2300FFF3)</a>
-  <a href="https://twitter.com/Blazzejs">![X (formerly Twitter) URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2FBlazzejs)</a>
-  <a>![Static Badge](https://img.shields.io/badge/v.1.2.3%20-%20%230213FF)</a>
-  <a>![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/Axnjr/Blazze.js?logoColor=%23000&labelColor=%23F4FF00&color=%23FC9300)</a>
-
-  <br>
-  
 </div>
 
 ### Highly available, lightning-fast application-level load balancer designed to distribute incoming traffic to target instances based on the Round-Robin algorithm or CPU and memory usage metrics collected from individual instances in the fleet. It features advanced configuration options and an auto-scaler that dynamically scales the fleet of instances in real time based on traffic demands.
